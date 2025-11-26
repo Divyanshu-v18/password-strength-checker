@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Password Strength Checker</h1>
+            <p class="subtitle">Create a secure password and check its strength</p>
+            
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    placeholder="Enter your password"
+                    autocomplete="off"
+                >
+                <button class="icon-btn" id="toggleBtn" title="Show/Hide Password">
+                    <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn" id="copyBtn" title="Copy Password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="strength-meter">
+                <div class="strength-bar" id="strengthBar"></div>
+            </div>
+
+            <div class="strength-info">
+                <span class="strength-label" id="strengthLabel">Enter a password</span>
+                <span class="crack-time" id="crackTime"></span>
+            </div>
+
+            <div class="requirements">
+                <h3>Password Requirements</h3>
+                <ul>
+                    <li id="req-length">
+                        <span class="icon">○</span>
+                        At least 8 characters
+                    </li>
+                    <li id="req-uppercase">
+                        <span class="icon">○</span>
+                        Contains uppercase letter
+                    </li>
+                    <li id="req-lowercase">
+                        <span class="icon">○</span>
+                        Contains lowercase letter
+                    </li>
+                    <li id="req-number">
+                        <span class="icon">○</span>
+                        Contains number
+                    </li>
+                    <li id="req-special">
+                        <span class="icon">○</span>
+                        Contains special character
+                    </li>
+                    <li id="req-common">
+                        <span class="icon">○</span>
+                        Not a common password
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tips">
+                <h3>💡 Tips for Strong Passwords</h3>
+                <ul>
+                    <li>Use a mix of letters, numbers, and symbols</li>
+                    <li>Avoid personal information</li>
+                    <li>Use unique passwords for different accounts</li>
+                    <li>Consider using a passphrase</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

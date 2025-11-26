@@ -1,0 +1,18 @@
+You're right! The scoring logic needs to be fixed. A password
+ should never be "Strong" if it doesn't meet the minimum 
+ 8-character requirement. Let me fix the scoring algorithm:
+
+
+Fixed! Now the password checker will:
+
+1. Always show "Too Short" if the password is less than 
+    8 characters, regardless of other criteria
+2. Only calculate the full score once the 8-character minimum 
+    is met
+3. Adjusted the scoring thresholds to be more realistic 
+    (now requires higher scores for "Strong")
+4. Added penalty for common passwords
+
+
+Try it now - short passwords like "a@2A" will correctly show 
+as "Too Short" and "Weak" instead of "Strong".

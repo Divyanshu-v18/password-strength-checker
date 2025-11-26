@@ -1,0 +1,16 @@
+I'm building a single-purpose website called password strength checker
+
+i need you to generate seperate html, css & js for the website
+
+Here are some of my requirements
+
+show/hide button
+password copy button
+strength meter bar
+labels for strength & crack time
+
+above are my requirements add more if you think i miss something 
+
+keep the UI clean and modern
+
+Also create optional dictionary check using common_passwords.txt

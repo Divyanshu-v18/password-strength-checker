@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #2d3748;
+    font-size: 28px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #718096;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#passwordInput {
+    flex: 1;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#passwordInput:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.icon-btn {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #718096;
+}
+
+.icon-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+    color: #2d3748;
+}
+
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+.strength-meter {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+
+.strength-bar.weak {
+    width: 25%;
+    background: linear-gradient(90deg, #f56565, #fc8181);
+}
+
+.strength-bar.fair {
+    width: 50%;
+    background: linear-gradient(90deg, #ed8936, #f6ad55);
+}
+
+.strength-bar.good {
+    width: 75%;
+    background: linear-gradient(90deg, #ecc94b, #f6e05e);
+}
+
+.strength-bar.strong {
+    width: 100%;
+    background: linear-gradient(90deg, #48bb78, #68d391);
+}
+
+.strength-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 24px;
+}
+
+.strength-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #718096;
+}
+
+.strength-label.weak {
+    color: #f56565;
+}
+
+.strength-label.fair {
+    color: #ed8936;
+}
+
+.strength-label.good {
+    color: #ecc94b;
+}
+
+.strength-label.strong {
+    color: #48bb78;
+}
+
+.crack-time {
+    font-size: 12px;
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+.requirements {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.requirements h3 {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.requirements ul {
+    list-style: none;
+}
+
+.requirements li {
+    padding: 8px 0;
+    color: #718096;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.requirements li .icon {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.requirements li.met {
+    color: #48bb78;
+}
+
+.requirements li.met .icon {
+    color: #48bb78;
+}
+
+.requirements li.met .icon::before {
+    content: '✓';
+}
+
+.requirements li.unmet {
+    color: #f56565;
+}
+
+.requirements li.unmet .icon {
+    color: #f56565;
+}
+
+.requirements li.unmet .icon::before {
+    content: '✗';
+}
+
+.tips {
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.tips h3 {
+    font-size: 16px;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.tips ul {
+    list-style: none;
+}
+
+.tips li {
+    padding: 6px 0;
+    color: #4a5568;
+    font-size: 13px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tips li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: #667eea;
+    font-weight: bold;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
